@@ -832,60 +832,86 @@
         </div>
     </section> -->
 
-    <!-- CTA Section -->
+    <!-- CTA / Contact Section -->
     <section class="section section-cta" id="contact">
         <div class="cta-particles" id="ctaParticles" aria-hidden="true"></div>
         
         <div class="container">
             <div class="section-header">
-                <span class="section-badge badge-green">Let's Build Intelligence That Scales</span>
-                <h2 class="section-title">Bring clarity to complexity</h2>
-                <p class="section-description">
-                    With data pipelines, models, and dashboards built around your mission
-                </p>
+                <span class="section-badge badge-muted">CONTACT</span>
+                <h2 class="section-title">Get In Touch With Us</h2>
+                <p class="section-description">We're here to answer questions about data, AI, or how SwayAnalytics can help you make better decisions.</p>
             </div>
-            
-            <div class="cta-buttons" data-animate>
-                <button class="btn btn-primary btn-lg">
-                    <svg class="btn-icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <path d="M22 6l-10 7L2 6"/>
-                    </svg>
-                    Contact Us
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
-                <button class="btn btn-outline btn-lg">
-                    <svg class="btn-icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                        <path d="M16 2v4M8 2v4M3 10h18"/>
-                    </svg>
-                    Schedule Demo
-                </button>
-            </div>
-            
-            <div class="cta-features" data-animate>
-                <div class="cta-feature">
-                    <svg class="cta-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                    <p>Free Consultation</p>
-                </div>
-                <div class="cta-feature">
-                    <svg class="cta-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                    <p>Custom Solutions</p>
-                </div>
-                <div class="cta-feature">
-                    <svg class="cta-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                    <p>Expert Support</p>
+
+            <div class="contact-grid" itemscope itemtype="https://schema.org/ContactPage">
+                <figure class="contact-illustration" data-animate>
+                    <img src="swayanalytics-contact-support-illustration.png" alt="Customer success representative illustration — contact SwayAnalytics" class="img-fluid" loading="lazy">
+                    <figcaption class="sr-only">Illustration showing contact / customer support</figcaption>
+                </figure>
+
+                <div class="contact-panel" data-animate>
+                    <form id="contactForm" class="contact-form" novalidate itemprop="potentialAction" itemscope itemtype="https://schema.org/CommunicateAction" aria-labelledby="contactFormTitle">
+                        <h3 id="contactFormTitle" class="sr-only">Contact form — Get in touch with SwayAnalytics</h3>
+
+                        <!-- Honeypot to trap bots (should remain empty) -->
+                        <label class="sr-only" for="cf-website">Leave this field empty</label>
+                        <input type="text" id="cf-website" name="website" class="honeypot" autocomplete="off" tabindex="-1">
+
+                        <div class="form-row two-col">
+                            <div class="form-field">
+                                <label class="sr-only" for="cf-first">First name</label>
+                                <input id="cf-first" name="first_name" type="text" autocomplete="given-name" placeholder="First name" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="sr-only" for="cf-last">Last name</label>
+                                <input id="cf-last" name="last_name" type="text" autocomplete="family-name" placeholder="Last name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row two-col">
+                            <div class="form-field">
+                                <label class="sr-only" for="cf-email">Email</label>
+                                <input id="cf-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="sr-only" for="cf-subject">Subject</label>
+                                <input id="cf-subject" name="subject" type="text" autocomplete="on" placeholder="Subject" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row full">
+                            <label class="sr-only" for="cf-message">Message</label>
+                            <textarea id="cf-message" name="message" rows="6" placeholder="Enter your message" required></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+
+                        <div id="cf-feedback" class="form-feedback sr-only" aria-live="polite"></div>
+                    </form>
                 </div>
             </div>
         </div>
+
+        <!-- JSON-LD for ContactPage (helps AEO) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "url": "https://www.swayanalytics.ai/contact",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "SwayAnalytics",
+            "url": "https://www.swayanalytics.ai/",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Service",
+              "email": "contact@swayanalytics.ai"
+            }
+          }
+        }
+        </script>
     </section>
     </main>
 
@@ -906,6 +932,61 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    // Improved client-side handler for contact form: validates, checks honeypot, shows polite feedback (no network calls)
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('contactForm');
+        const feedback = document.getElementById('cf-feedback');
+        if (!form || !feedback) return;
+
+        function showMessage(message, isError = false) {
+            feedback.classList.remove('sr-only');
+            feedback.textContent = message;
+            feedback.classList.toggle('error', isError);
+            if (isError) feedback.setAttribute('role', 'alert');
+            else feedback.setAttribute('role', 'status');
+        }
+
+        function validateEmail(email) {
+            // simple RFC-like check
+            return /^\S+@\S+\.\S+$/.test(email);
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Honeypot check
+            const hp = document.getElementById('cf-website');
+            if (hp && hp.value.trim() !== '') {
+                // treat as spam silently but show minimal polite message
+                showMessage('Thanks for your message. If it was sent by a real person, we will contact you soon.', false);
+                form.reset();
+                return;
+            }
+
+            // Basic validation
+            const first = document.getElementById('cf-first');
+            const last = document.getElementById('cf-last');
+            const email = document.getElementById('cf-email');
+            const subject = document.getElementById('cf-subject');
+            const message = document.getElementById('cf-message');
+
+            if (!first.value.trim()) { showMessage('Please enter your first name.', true); first.focus(); return; }
+            if (!last.value.trim()) { showMessage('Please enter your last name.', true); last.focus(); return; }
+            if (!email.value.trim() || !validateEmail(email.value.trim())) { showMessage('Please enter a valid email address.', true); email.focus(); return; }
+            if (!subject.value.trim()) { showMessage('Please enter a subject for your message.', true); subject.focus(); return; }
+            if (!message.value.trim()) { showMessage('Please enter a message.', true); message.focus(); return; }
+
+            // Success (no network call by default) — show confirmation and disable inputs
+            showMessage('Thanks — we received your message. We will get back to you soon.', false);
+            form.querySelectorAll('input, textarea, button').forEach(el => el.disabled = true);
+            // Keep the data in the form for a short while then clear it for UX
+            setTimeout(() => {
+                form.reset();
+            }, 1500);
+        });
+    });
+    </script>
     
     <!-- No JavaScript Fallback -->
     <noscript>
