@@ -59,8 +59,12 @@ for (let i = 0; i < particleCount; i++) {
   particle.className = "particle";
   particle.style.left = `${Math.random() * 100}%`;
   particle.style.top = `${Math.random() * 100}%`;
-  particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
-  particle.style.animationDelay = `${Math.random() * 5}s`;
+  // Give hero particles small randomized offsets (used by the random movement keyframes)
+  particle.style.setProperty("--x", `${Math.random() * 200 - 100}px`);
+  particle.style.setProperty("--y", `${Math.random() * 200 - 100}px`);
+  // Use shorter durations for the more lively, random hero motion
+  particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+  particle.style.animationDelay = `${Math.random() * 2}s`;
   particlesContainer.appendChild(particle);
 }
 
@@ -73,10 +77,10 @@ for (let i = 0; i < ctaParticleCount; i++) {
   particle.className = "cta-particle";
   particle.style.left = `${Math.random() * 100}%`;
   particle.style.top = `${Math.random() * 100}%`;
-  particle.style.setProperty("--x", `${Math.random() * 200 - 100}px`);
-  particle.style.setProperty("--y", `${Math.random() * 200 - 100}px`);
-  particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
-  particle.style.animationDelay = `${Math.random() * 2}s`;
+  // CTA particles will now follow the long upward float motion (like the previous hero)
+  // Remove per-particle random offsets and give them longer durations so they drift slowly
+  particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+  particle.style.animationDelay = `${Math.random() * 5}s`;
   ctaParticlesContainer.appendChild(particle);
 }
 

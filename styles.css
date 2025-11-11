@@ -196,7 +196,8 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     background: var(--color-cyan-400);
     border-radius: 50%;
     opacity: 0.3;
-    animation: float linear infinite;
+    /* Use the random-offset animation for hero particles (previously used by CTA) */
+    animation: float-cta linear infinite;
 }
 
 @keyframes float {
@@ -1224,7 +1225,8 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     background: var(--color-cyan-400);
     border-radius: 50%;
     opacity: 0.3;
-    animation: float-cta ease-in-out infinite;
+    /* CTA particles now use the long upward float animation (previously used by hero) */
+    animation: float ease-in-out infinite;
 }
 
 @keyframes float-cta {
