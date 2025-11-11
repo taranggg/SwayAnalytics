@@ -836,17 +836,50 @@
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-logo">
-                <svg class="footer-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                    <path d="M2 17l10 5 10-5"/>
-                    <path d="M2 12l10 5 10-5"/>
-                </svg>
-                <span>SwayAnalytics.ai</span>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="footer-logo" aria-label="SwayAnalytics home">
+                    <svg class="footer-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    <span class="footer-brand-name">SwayAnalytics.ai</span>
+                </a>
+                <p class="footer-desc">AI-driven analytics and data intelligence — turning complex data into clear action for better decisions.</p>
             </div>
-            <p class="footer-copyright">© 2024 SwayAnalytics. All rights reserved.</p>
-            <p class="footer-tagline">From Data to Decisions</p>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <h4 class="footer-heading">Product</h4>
+                <ul>
+                    <li><a href="#what-we-do">What We Do</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-resources" aria-label="Resources">
+                <h4 class="footer-heading">Resources</h4>
+                <ul>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#docs">Docs</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </nav>
+
+            <!-- removed Contact and Stay connected (social/subscribe) as requested -->
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>© 2024 SwayAnalytics. All rights reserved.</p>
+                    <ul class="legal-links">
+                        <li><a href="#privacy">Privacy</a></li>
+                        <li><a href="#terms">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 
