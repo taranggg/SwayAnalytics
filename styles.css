@@ -514,14 +514,61 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     border: 1px solid rgba(70, 80, 100, 0.3);
     border-radius: 1rem;
     padding: 2rem;
-    transition: all 0.3s ease;
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), border-color 260ms ease, background 260ms ease;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
+
+.capability-card > * { position: relative; z-index: 2; }
 
 .capability-card:hover {
     transform: translateY(-8px);
-    border-color: var(--color-cyan-500);
-    box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+    border-color: rgba(255,255,255,0.06);
+}
+
+/* circular decorative light in top-right (contained) */
+.capability-card::before {
+    content: '';
+    position: absolute;
+    /* position a large circle so only a curved arc (semi-circle) is visible in the top-right */
+    right: -120px;
+    top: 0;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    /* match industry-card semi-circle sizing/placement for consistency */
+    /* stronger, slightly sharper wash so the arc/tint reads more prominently */
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.26) 0%, rgba(0,0,0,0) 55%);
+    filter: blur(12px);
+    mix-blend-mode: overlay;
+    opacity: 0.62; /* noticeably visible by default */
+    transform: scale(1);
+    transition: transform 200ms ease, opacity 200ms ease;
+}
+
+/* hover tint overlay using per-card accent color */
+.capability-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0));
+    opacity: 0;
+    transition: opacity 260ms ease, background 260ms ease, transform 320ms ease;
+}
+
+.capability-card:hover::after {
+    opacity: 1;
+    transform: translateY(-6px);
+}
+
+.capability-card:hover::before {
+    opacity: 0.95; /* brighten the curved wash on hover */
+    transform: scale(1.04);
 }
 
 .capability-icon {
@@ -533,6 +580,8 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     justify-content: center;
     margin-bottom: 1.5rem;
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2; /* keep icon above overlays */
 }
 
 .capability-card:hover .capability-icon {
@@ -558,6 +607,26 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
 .gradient-blue {
     background: linear-gradient(135deg, var(--color-blue-500), var(--color-cyan-500));
 }
+
+/* Accent color mappings for hover tint */
+.capability-card.accent-blue { --accent-color: rgba(59,130,246,0.14); }
+.capability-card.accent-purple { --accent-color: rgba(124,58,237,0.14); }
+.capability-card.accent-cyan { --accent-color: rgba(6,182,212,0.14); }
+.capability-card.accent-yellow { --accent-color: rgba(234,179,8,0.12); }
+.capability-card.accent-indigo { --accent-color: rgba(99,102,241,0.12); }
+
+/* Apply accent to overlays */
+.capability-card.accent-blue::before { background: radial-gradient(circle at 22% 22%, rgba(59,130,246,0.36) 0%, rgba(0,0,0,0) 60%); }
+.capability-card.accent-purple::before { background: radial-gradient(circle at 22% 22%, rgba(124,58,237,0.34) 0%, rgba(0,0,0,0) 60%); }
+.capability-card.accent-cyan::before { background: radial-gradient(circle at 22% 22%, rgba(6,182,212,0.38) 0%, rgba(0,0,0,0) 60%); }
+.capability-card.accent-yellow::before { background: radial-gradient(circle at 22% 22%, rgba(234,179,8,0.34) 0%, rgba(0,0,0,0) 60%); }
+.capability-card.accent-indigo::before { background: radial-gradient(circle at 22% 22%, rgba(99,102,241,0.34) 0%, rgba(0,0,0,0) 60%); }
+
+.capability-card.accent-blue::after { background: linear-gradient(180deg, rgba(59,130,246,0.06), rgba(59,130,246,0.03)); }
+.capability-card.accent-purple::after { background: linear-gradient(180deg, rgba(124,58,237,0.06), rgba(124,58,237,0.03)); }
+.capability-card.accent-cyan::after { background: linear-gradient(180deg, rgba(6,182,212,0.06), rgba(6,182,212,0.03)); }
+.capability-card.accent-yellow::after { background: linear-gradient(180deg, rgba(234,179,8,0.05), rgba(234,179,8,0.02)); }
+.capability-card.accent-indigo::after { background: linear-gradient(180deg, rgba(99,102,241,0.05), rgba(99,102,241,0.02)); }
 
 .gradient-purple {
     background: linear-gradient(135deg, var(--color-purple-500), #ec4899);
@@ -985,24 +1054,33 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     padding: 2rem;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), border-color 260ms ease, background 260ms ease;
 }
 
 .industry-card::before {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 0 0 0 100%;
-    opacity: 0.05;
-    transition: opacity 0.3s ease;
+    right: -120px; /* larger circle so only arc is visible */
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    /* make the industry semi-circle more visible */
+    /* stronger default wash and sharper blur so the arc/tint reads from farther away */
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0) 55%);
+    opacity: 0.50;
+    transition: opacity 200ms ease, transform 200ms ease;
+    filter: blur(12px);
 }
 
 .industry-card:hover {
     transform: translateY(-10px);
-    border-color: var(--color-cyan-500);
+    border-color: rgba(255,255,255,0.06);
+}
+
+.industry-card:hover::before {
+    opacity: 0.92;
+    transform: scale(1.04);
 }
 
 .industry-icon {
@@ -1019,6 +1097,36 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
 .industry-card:hover .industry-icon {
     transform: scale(1.15) rotate(-5deg);
 }
+
+/* overlay tint for hover — default transparent */
+.industry-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0));
+    opacity: 0;
+    transition: opacity 260ms ease, background 260ms ease;
+}
+
+.industry-card:hover::after { opacity: 1; }
+
+/* ensure card content lives above overlays */
+.industry-card > * { position: relative; z-index: 2; }
+
+/* per-accent washes and tints */
+.industry-card.accent-blue::before { background: radial-gradient(circle at 20% 20%, rgba(59,130,246,0.38) 0%, rgba(0,0,0,0) 60%); }
+.industry-card.accent-purple::before { background: radial-gradient(circle at 20% 20%, rgba(124,58,237,0.36) 0%, rgba(0,0,0,0) 60%); }
+.industry-card.accent-green::before { background: radial-gradient(circle at 20% 20%, rgba(34,197,94,0.36) 0%, rgba(0,0,0,0) 60%); }
+.industry-card.accent-yellow::before { background: radial-gradient(circle at 20% 20%, rgba(234,179,8,0.34) 0%, rgba(0,0,0,0) 60%); }
+.industry-card.accent-cyan::before { background: radial-gradient(circle at 20% 20%, rgba(6,182,212,0.38) 0%, rgba(0,0,0,0) 60%); }
+
+.industry-card.accent-blue:hover::after { background: linear-gradient(180deg, rgba(59,130,246,0.06), rgba(59,130,246,0.03)); }
+.industry-card.accent-purple:hover::after { background: linear-gradient(180deg, rgba(124,58,237,0.06), rgba(124,58,237,0.03)); }
+.industry-card.accent-green:hover::after { background: linear-gradient(180deg, rgba(34,197,94,0.05), rgba(34,197,94,0.03)); }
+.industry-card.accent-yellow:hover::after { background: linear-gradient(180deg, rgba(234,179,8,0.05), rgba(234,179,8,0.02)); }
+.industry-card.accent-cyan:hover::after { background: linear-gradient(180deg, rgba(6,182,212,0.06), rgba(6,182,212,0.03)); }
 
 .industry-icon svg {
     width: 2rem;
@@ -1220,6 +1328,12 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     filter: none !important;
 }
 
+/* Make Vision section flush with the following Contact section */
+#vision {
+    margin-bottom: 0; /* remove default section spacing below Vision */
+    padding-bottom: 0; /* collapse extra padding so CTA can sit directly beneath */
+}
+
 /* Remove glowing effects and drop-shadows site-wide for a simpler look */
 .hero-gradient {
     animation: none !important;
@@ -1262,6 +1376,10 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
 /* CTA Section */
 .section-cta {
     position: relative;
+    /* pull the CTA section up visually so it sits directly below the Vision section */
+    margin-top: 0;
+    padding-top: 1rem; /* reduce large top padding so section appears closer */
+    min-height: 56vh; /* increase height so the contact area reads as a larger band */
     background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
 }
 
