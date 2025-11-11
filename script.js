@@ -178,10 +178,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Add hover effects to cards
-const cards = document.querySelectorAll(
-  ".capability-card, .industry-card, .highlight-card"
-);
+// Add hover effects to cards (exclude simple highlight cards — handled by CSS only)
+const cards = document.querySelectorAll(".capability-card, .industry-card");
 
 cards.forEach((card) => {
   card.addEventListener("mouseenter", function () {
@@ -307,10 +305,8 @@ cursorStyle.textContent = `
 `;
 document.head.appendChild(cursorStyle);
 
-// Tilt effect on cards (excluding stat-card and process-card)
-const tiltCards = document.querySelectorAll(
-  ".capability-card, .industry-card, .highlight-card"
-);
+// Tilt effect on cards (exclude highlight cards to keep them simple)
+const tiltCards = document.querySelectorAll(".capability-card, .industry-card");
 tiltCards.forEach((card) => {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();

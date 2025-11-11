@@ -887,24 +887,78 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     gap: 1.5rem;
 }
 
+
 .highlight-card {
-    background: rgba(18, 24, 37, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(70, 80, 100, 0.3);
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+    backdrop-filter: blur(8px);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 2.25rem 2rem;
     text-align: center;
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.03);
+    overflow: hidden; /* ensure decorative element cannot overflow the card */
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), border-color 260ms ease, background 260ms ease;
 }
+
+/* circular accent badge at the top-left, kept inside the card bounds */
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    /* move further out so the light reaches deeper into the card toward the icon */
+    left: -80px;
+    top: -80px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    /* even larger soft radial light, center positioned toward top-left so it illuminates the icon area */
+    background: radial-gradient(circle at 24% 24%, rgba(255,255,255,0.28) 0%, rgba(6,182,212,0.16) 20%, rgba(124,58,237,0.10) 36%, rgba(0,0,0,0) 72%);
+    filter: blur(22px);
+    mix-blend-mode: overlay;
+}
+
+.highlight-card > * { position: relative; z-index: 1; }
 
 .highlight-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    border-color: var(--color-cyan-500);
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255,255,255,0.06);
 }
 
-.highlight-emoji {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.highlight-icon {
+    width: 68px;
+    height: 68px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 14px;
+    margin: 0 auto 1rem auto;
+    color: var(--color-text-primary);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+    box-shadow: none;
+}
+
+.highlight-icon svg { width: 32px; height: 32px; stroke: currentColor; }
+
+.highlight-icon--cyan { color: var(--color-cyan-400); background: linear-gradient(180deg, rgba(6,182,212,0.06), rgba(6,182,212,0.02)); }
+.highlight-icon--purple { color: var(--color-purple-400); background: linear-gradient(180deg, rgba(124,58,237,0.06), rgba(124,58,237,0.02)); }
+.highlight-icon--red { color: var(--color-yellow-400); background: linear-gradient(180deg, rgba(234,179,8,0.06), rgba(234,179,8,0.02)); }
+
+.highlight-card h4 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0 0.25rem 0;
+}
+
+.highlight-card p { color: var(--color-text-muted); margin: 0; }
+
+/* subtle decorative underline for titles */
+.highlight-card h4::after {
+    content: '';
+    display: block;
+    margin: 0.6rem auto 0;
+    width: 40px;
+    height: 4px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
 }
 
 .highlight-card h4 {
