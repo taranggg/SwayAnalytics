@@ -61,21 +61,27 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
 /* Header Styles */
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    max-width: 1200px;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(6, 182, 212, 0.1);
-    transition: all 0.3s ease;
-    padding: var(--spacing-sm) 0;
+    /* glass / liquid effect */
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px) saturate(120%);
+    box-shadow: 0 6px 30px rgba(2,6,23,0.45);
+    transition: all 0.28s ease;
+    padding: calc(var(--spacing-xs)) 0;
+    border-radius: 14px;
 }
 
 .header.scrolled {
-    background: rgba(0, 0, 0, 0.95);
-    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.1);
-    padding: var(--spacing-xs) 0;
+    /* slightly stronger glass when scrolled */
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    box-shadow: 0 8px 36px rgba(2,6,23,0.5);
+    padding: calc(var(--spacing-xs)) 0;
 }
 
 .header-container {
@@ -84,6 +90,9 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     justify-content: space-between;
     padding: var(--spacing-sm) var(--spacing-lg);
 }
+
+/* hide header CTA/button to keep the nav sleek */
+.btn-header { display: none !important; }
 
 .logo {
     display: flex;
@@ -1317,7 +1326,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 4rem;
     filter: drop-shadow(0 10px 40px rgba(6, 182, 212, 0.4))
             drop-shadow(0 0 80px rgba(147, 51, 234, 0.3));
     transform: perspective(1000px) rotateX(2deg);
