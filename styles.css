@@ -1224,6 +1224,107 @@ body {
     transform: translateY(0);
 }
 
+/* FAQ Section Styles */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: var(--spacing-2xl);
+}
+
+.faq-item {
+    background: rgba(18, 24, 37, 0.6);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 12px;
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.1);
+}
+
+.faq-question {
+    margin: 0;
+}
+
+.faq-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-toggle:hover {
+    color: var(--color-cyan-400);
+}
+
+.faq-toggle[aria-expanded="true"] {
+    color: var(--color-cyan-400);
+}
+
+.faq-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle[aria-expanded="true"] .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-toggle[aria-expanded="true"] + .faq-answer {
+    max-height: 500px;
+    padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+}
+
+.faq-answer p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.faq-answer strong {
+    color: var(--color-cyan-400);
+    font-weight: 600;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Badge Purple */
+.badge-purple {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(124, 58, 237, 0.2));
+    border: 1px solid rgba(147, 51, 234, 0.3);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     :root {
@@ -1410,5 +1511,18 @@ body {
     .features-table th,
     .features-table td {
         padding: var(--spacing-sm);
+    }
+
+    .faq-toggle {
+        font-size: 1rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .faq-answer {
+        font-size: 0.9rem;
+    }
+
+    .faq-toggle[aria-expanded="true"] + .faq-answer {
+        padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
     }
 }

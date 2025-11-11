@@ -337,4 +337,38 @@ window.addEventListener("load", () => {
   }, 100);
 });
 
+// FAQ Toggle Functionality
+const faqToggles = document.querySelectorAll(".faq-toggle");
+
+faqToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+
+    // Close all other FAQs
+    faqToggles.forEach((otherToggle) => {
+      if (otherToggle !== toggle) {
+        otherToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Toggle current FAQ
+    toggle.setAttribute("aria-expanded", !isExpanded);
+  });
+});
+
+// Close FAQ on Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    faqToggles.forEach((toggle) => {
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  }
+});
+
+// Mobile menu ARIA updates
+mobileMenuBtn.addEventListener("click", () => {
+  const isExpanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
+  mobileMenuBtn.setAttribute("aria-expanded", !isExpanded);
+});
+
 console.log("SwayAnalytics.ai - From Data to Decisions 🚀");
