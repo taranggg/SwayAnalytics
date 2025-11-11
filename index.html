@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwayAnalytics.ai - From Data to Decisions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+                <span class="logo-text">SwayAnalytics.ai</span>
+            </div>
+            <nav class="nav" id="nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#what-we-do" class="nav-link">What We Do</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#industries" class="nav-link">Industries</a>
+                <a href="#impact" class="nav-link">Impact</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="btn btn-primary btn-header">Get Started</button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="particles" id="particles"></div>
+        <div class="hero-gradient"></div>
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-logo animate-fade-in">
+                    <svg class="hero-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    <h1 class="hero-title">SwayAnalytics.ai</h1>
+                </div>
+                
+                <p class="hero-tagline animate-fade-in-up delay-1">From Data to Decisions</p>
+                
+                <h2 class="hero-headline animate-fade-in-up delay-2">
+                    From Guesswork to Ground Truth
+                </h2>
+                
+                <p class="hero-subheadline animate-fade-in-up delay-3">
+                    Turning Complex Data into Clear Action
+                </p>
+                
+                <p class="hero-description animate-fade-in-up delay-4">
+                    SwayAnalytics brings together data engineering, AI-driven analytics, and intuitive visualization to help organizations see patterns, predict outcomes, and act with confidence.
+                </p>
+                
+                <div class="hero-buttons animate-fade-in-up delay-5">
+                    <button class="btn btn-primary btn-lg">
+                        Get Started
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-outline btn-lg">Learn More</button>
+                </div>
+            </div>
+            
+            <!-- <div class="scroll-indicator animate-fade-in delay-6">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="section" id="what-we-do">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge badge-blue">🟦 What We Do</span>
+                <h2 class="section-title">SwayAnalytics builds the intelligence layer for modern organizations</h2>
+                <p class="section-description">
+                    We design systems that transform scattered information — from operations, customers, and the field — into a unified, continuously learning analytics ecosystem.
+                </p>
+            </div>
+            
+            <h3 class="subsection-title">Our Core Capabilities:</h3>
+            
+            <div class="capabilities-grid">
+                <div class="capability-card" data-animate>
+                    <div class="capability-icon gradient-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                        </svg>
+                    </div>
+                    <h4>Data Integration & ETL Pipelines</h4>
+                    <p>Unify, clean, and prepare data from multiple sources</p>
+                </div>
+                
+                <div class="capability-card" data-animate>
+                    <div class="capability-icon gradient-purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <circle cx="12" cy="17" r="1"/>
+                        </svg>
+                    </div>
+                    <h4>Predictive & Prescriptive Analytics</h4>
+                    <p>Forecast trends and recommend optimal actions</p>
+                </div>
+                
+                <div class="capability-card" data-animate>
+                    <div class="capability-icon gradient-cyan">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 20V10M12 20V4M6 20v-6"/>
+                        </svg>
+                    </div>
+                    <h4>Real-Time Visualizations</h4>
+                    <p>Visualize KPIs, metrics, and anomalies dynamically</p>
+                </div>
+                
+                <div class="capability-card" data-animate>
+                    <div class="capability-icon gradient-yellow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <h4>AI-Driven Insights</h4>
+                    <p>Uncover sentiment, behavior, and performance signals</p>
+                </div>
+                
+                <div class="capability-card" data-animate>
+                    <div class="capability-icon gradient-indigo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                        </svg>
+                    </div>
+                    <h4>Scalable Cloud Infrastructure</h4>
+                    <p>Deploy analytics securely on AWS or hybrid clouds</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section section-dark" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge badge-orange">🟧 How It Works</span>
+                <h2 class="section-title">Our Process</h2>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-card" data-animate>
+                    <div class="process-number gradient-blue">1</div>
+                    <div class="process-icon gradient-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 3v12M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            <path d="M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            <path d="M15 6a9 9 0 0 0-9 9"/>
+                        </svg>
+                    </div>
+                    <h3>Connect</h3>
+                    <p>We integrate data from your apps, CRMs, IoT sensors, field inputs, or public datasets — whatever fuels your business.</p>
+                </div>
+                
+                <div class="process-card" data-animate>
+                    <div class="process-number gradient-purple">2</div>
+                    <div class="process-icon gradient-purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Transform</h3>
+                    <p>Our ETL engine cleans, enriches, and structures your data to make it analytics-ready — automated, versioned, and governed.</p>
+                </div>
+                
+                <div class="process-card" data-animate>
+                    <div class="process-number gradient-cyan">3</div>
+                    <div class="process-icon gradient-cyan">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Analyze</h3>
+                    <p>AI models detect trends, predict performance, and identify hidden opportunities or risks in near-real-time.</p>
+                </div>
+                
+                <div class="process-card" data-animate>
+                    <div class="process-number gradient-green">4</div>
+                    <div class="process-icon gradient-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Visualize & Act</h3>
+                    <p>Interactive dashboards and alerts turn complex intelligence into simple, actionable steps for teams and decision-makers.</p>
+                </div>
+            </div>
+            
+            <div class="process-image" data-animate>
+                <img src="ai-data-intelligence-workflow-process.png" alt="SwayAnalytics Data Intelligence Process" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why SwayAnalytics Section -->
+    <section class="section" id="why-sway">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge badge-green">🟩 Why SwayAnalytics</span>
+                <h2 class="section-title">Built for Modern Intelligence</h2>
+            </div>
+            
+            <div class="features-table" data-animate>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>What It Means for You</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                Unified Data Foundation
+                            </td>
+                            <td>One source of truth across teams and tools</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                Real-Time Intelligence
+                            </td>
+                            <td>Live dashboards and automated anomaly detection</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                Predictive Modeling
+                            </td>
+                            <td>Anticipate outcomes before they unfold</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                Customizable Workflows
+                            </td>
+                            <td>Tailored analytics for your specific domain</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                Scalable Architecture
+                            </td>
+                            <td>Built for cloud-native performance and security</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="highlights-grid">
+                <div class="highlight-card" data-animate>
+                    <div class="highlight-emoji">⚡</div>
+                    <h4>Lightning Fast</h4>
+                    <p>Process millions of records in seconds</p>
+                </div>
+                <div class="highlight-card" data-animate>
+                    <div class="highlight-emoji">🔒</div>
+                    <h4>Enterprise Secure</h4>
+                    <p>Bank-level encryption and compliance</p>
+                </div>
+                <div class="highlight-card" data-animate>
+                    <div class="highlight-emoji">🎯</div>
+                    <h4>Action-Oriented</h4>
+                    <p>Turn insights into immediate actions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="section section-dark" id="industries">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge badge-yellow">🟨 Industries We Empower</span>
+                <h2 class="section-title">Powering Intelligence Across Sectors</h2>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card" data-animate>
+                    <div class="industry-icon gradient-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                            <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/>
+                        </svg>
+                    </div>
+                    <h3>Public Sector</h3>
+                    <p>Program monitoring, impact analytics, citizen data systems</p>
+                </div>
+                
+                <div class="industry-card" data-animate>
+                    <div class="industry-icon gradient-purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <h3>Retail & FMCG</h3>
+                    <p>Sales forecasting, inventory optimization, customer segmentation</p>
+                </div>
+                
+                <div class="industry-card" data-animate>
+                    <div class="industry-icon gradient-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"/>
+                            <path d="M2 12h20"/>
+                        </svg>
+                    </div>
+                    <h3>Agriculture & Rural Development</h3>
+                    <p>Resource mapping, livelihood intelligence, geospatial insights</p>
+                </div>
+                
+                <div class="industry-card" data-animate>
+                    <div class="industry-icon gradient-yellow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M2 12h20"/>
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                    </div>
+                    <h3>Financial Services</h3>
+                    <p>Risk scoring, customer behavior modeling, performance analytics</p>
+                </div>
+                
+                <div class="industry-card" data-animate>
+                    <div class="industry-icon gradient-cyan">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Operations & Field Teams</h3>
+                    <p>Workforce tracking, performance benchmarking, real-time alerts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats Section -->
+    <section class="section" id="impact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge badge-brown">🟫 Impact in Numbers</span>
+                <h2 class="section-title">Proven Results, Measurable Impact</h2>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card" data-animate>
+                    <div class="stat-icon gradient-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value">
+                        <span class="counter" data-target="80">0</span>%
+                    </div>
+                    <p>Faster insight generation through automated ETL pipelines</p>
+                </div>
+                
+                <div class="stat-card" data-animate>
+                    <div class="stat-icon gradient-purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value">
+                        Up to <span class="counter" data-target="40">0</span>%
+                    </div>
+                    <p>Reduction in manual reporting</p>
+                </div>
+                
+                <div class="stat-card" data-animate>
+                    <div class="stat-icon gradient-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value">
+                        <span class="counter" data-target="10">0</span>M+
+                    </div>
+                    <p>Records - Scalable architecture powering datasets from 10K to 10M+</p>
+                </div>
+                
+                <div class="stat-card" data-animate>
+                    <div class="stat-icon gradient-yellow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M16 12l-4-4-4 4M12 16V8"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value">
+                        <span class="counter" data-target="85">0</span>%
+                    </div>
+                    <p>Predictive accuracy consistently exceeding in pilot projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="section section-dark" id="vision">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge badge-blue">🟦 Our Vision</span>
+            </div>
+            
+            <div class="vision-content" data-animate>
+                <div class="quote-mark">❝</div>
+                <blockquote class="vision-quote">
+                    To make advanced analytics accessible, actionable, and human-centered — so decisions across every level are powered by clarity, not complexity.
+                </blockquote>
+                
+                <div class="vision-highlight">
+                    <p class="vision-statement">
+                        "Data becomes valuable only when it moves decisions."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-cta" id="contact">
+        <div class="cta-particles" id="ctaParticles"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge badge-green">🟩 Let's Build Intelligence That Scales</span>
+                <h2 class="section-title">Bring clarity to complexity</h2>
+                <p class="section-description">
+                    With data pipelines, models, and dashboards built around your mission
+                </p>
+            </div>
+            
+            <div class="cta-buttons" data-animate>
+                <button class="btn btn-primary btn-lg">
+                    <svg class="btn-icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <path d="M22 6l-10 7L2 6"/>
+                    </svg>
+                    Contact Us
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                <button class="btn btn-outline btn-lg">
+                    <svg class="btn-icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <path d="M16 2v4M8 2v4M3 10h18"/>
+                    </svg>
+                    Schedule Demo
+                </button>
+            </div>
+            
+            <div class="cta-features" data-animate>
+                <div class="cta-feature">
+                    <svg class="cta-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <p>Free Consultation</p>
+                </div>
+                <div class="cta-feature">
+                    <svg class="cta-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <p>Custom Solutions</p>
+                </div>
+                <div class="cta-feature">
+                    <svg class="cta-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <p>Expert Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <svg class="footer-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+                <span>SwayAnalytics.ai</span>
+            </div>
+            <p class="footer-copyright">© 2024 SwayAnalytics. All rights reserved.</p>
+            <p class="footer-tagline">From Data to Decisions</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
